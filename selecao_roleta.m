@@ -1,6 +1,6 @@
 function [selecionado1, selecionado2] = selecao_roleta(populacao)
   
-  tamanho_populacao = size(populacao(2))
+  tamanho_populacao = size(populacao)(2)
   aptidoes = zeros(1, tamanho_populacao)
   
   for indice_individuo = 1:tamanho_populacao  

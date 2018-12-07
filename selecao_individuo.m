@@ -1,7 +1,6 @@
 function indice_escolhido = selecao_individuo(aptidoes)
   
   soma = sum(aptidoes(:,2))
-  aptidoes
   aptidoes(:,2) = aptidoes(:,2) / soma
   
   valor_aleatorio = rand

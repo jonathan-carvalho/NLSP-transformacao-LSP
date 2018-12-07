@@ -5,22 +5,26 @@ function populacao = mutacao(individuos, prob_mutacao, populacao, distribuicao_c
   
   for indice_individuo = 1:4
     
-    individuo = individuos(indice_individuo)
+    individuo = individuos(indice_individuo).repr
     
     for indice_mutante = 1:3
       
       mutante = operacao_mutacao(individuo, indice_mutante, dados_originais)
       
-      valor_fitness = calcular_fitness_individuo(mutante, distribuicao_classes)
+      valor_fitness = calcular_fitness_individuo(mutante, distribuicao_classes, dados_originais)
       
       prob_mutacao_gerado = rand
       
       if(prob_mutacao_gerado <= prob_mutacao)
-        modo_substituicao = modo_exigida
+        modo_substituicao = substituicao_exigida
       else
-        modo_substituicao = modo_condicional
+        modo_substituicao = substituicao_condicional
       endif
         
       populacao = adicionar_individuo_populacao(mutante, valor_fitness, populacao, modo_substituicao)
-      
+    
+    endfor
+
+  endfor  
+
 endfunction

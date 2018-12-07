@@ -1,4 +1,4 @@
-function [novo1, novo2, novo3, novo4] = cruzamento(p1, p2, w, dados_originais)
+function nova_geracao = cruzamento(individuo1, individuo2, w, dados_originais)
   
   tamanho_amostra = size(dados_originais)(2)
   qtd_atributos = size(dados_originais(1).atributos)(2)
@@ -54,5 +54,11 @@ function [novo1, novo2, novo3, novo4] = cruzamento(p1, p2, w, dados_originais)
     novo4(indice_instancia).classe = classe_instancia
     
   endfor
+  
+  nova_geracao = struct()
+  nova_geracao(1).repr = novo1
+  nova_geracao(2).repr = novo2
+  nova_geracao(3).repr = novo3
+  nova_geracao(4).repr = novo4
   
 endfunction
