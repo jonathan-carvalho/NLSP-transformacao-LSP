@@ -10,7 +10,7 @@ qtd_geracoes = 1
 prob_mutacao = 0.1
 
 populacao = criar_populacao(qtd_individuos, dados_originais)
-populacao = calcular_fitness_populacao(populacao, distribuicao_classes)
+populacao = calcular_fitness_populacao(populacao, distribuicao_classes, dados_originais)
 
 for num_geracao = 1:qtd_geracoes
   

@@ -1,4 +1,4 @@
-function populacao = calcular_fitness_populacao(populacao, distribuicao_classes)
+function populacao = calcular_fitness_populacao(populacao, distribuicao_classes, dados_originais)
   
   tamanho_populacao = size(populacao)(2)
   
@@ -6,7 +6,7 @@ function populacao = calcular_fitness_populacao(populacao, distribuicao_classes)
   
     individuo = populacao(indice_individuo).repr
     
-    valor_fitness = calcular_fitness_individuo(individuo, distribuicao_classes)
+    valor_fitness = calcular_fitness_individuo(individuo, distribuicao_classes, dados_originais)
     
     populacao(indice_individuo).fitness = valor_fitness
   
