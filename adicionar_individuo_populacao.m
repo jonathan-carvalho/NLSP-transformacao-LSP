@@ -3,7 +3,7 @@ function populacao = adicionar_individuo_populacao(individuo, fitness, populacao
   substituicao_exigida = 1
   substituicao_condicional = 0
   
-  tamanho_populacao = size(populacao(2))
+  tamanho_populacao = size(populacao)(2)
   aptidoes_populacao = zeros(1, tamanho_populacao)
   
   for indice_individuo = 1:tamanho_populacao

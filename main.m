@@ -1,12 +1,13 @@
+clear
 pkg load io
 
-dados_originais = csv2cell("../Datasets/iris.csv");
+dados_originais = csv2cell("../Datasets/circulos_concentricos.csv")
 dados_originais = transformar_cells_structs(dados_originais)
 
 distribuicao_classes = contador_classes(dados_originais)
 
-qtd_individuos = 10
-qtd_geracoes = 100
+qtd_individuos = 5
+qtd_geracoes = 20
 prob_mutacao = 0.1
 
 populacao = criar_populacao(qtd_individuos, dados_originais)
@@ -20,3 +21,5 @@ for num_geracao = 1:qtd_geracoes
   populacao = mutacao(nova_geracao, prob_mutacao, populacao, distribuicao_classes, dados_originais)
 
 endfor
+
+salvar_melhor_individuo("../Datasets/resultado.csv", populacao, distribuicao_classes, dados_originais)

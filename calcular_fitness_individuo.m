@@ -8,29 +8,13 @@ function valor_fitness = calcular_fitness_individuo(individuo, distribuicao_clas
   
   vetores_centroides = zeros(num_classes, qtd_atributos)
   
+  individuo = calcular_parametro_b(individuo, distribuicao_classes, dados_originais)
+  
   for indice_instancia = 1:qtd_instancias
    
-   atributos_transformados = individuo(indice_instancia).atributos
-   atributos_originais = dados_originais(indice_instancia).atributos
-   
-   for indice_atributo = 1:qtd_atributos
-      
-      valor_a = atributos_transformados(indice_atributo)
-      valor_original = atributos_originais(indice_atributo)
-      
-      valor_b = sqrt((valor_original^2) - (valor_a^2))
-      mudanca_sinal = (-1)^(mod(randi(2),2))
-      valor_b *= mudanca_sinal
-      
-      atributos_transformados(indice_atributo) = valor_a + i*valor_b
-
-   endfor
-   
-   individuo(indice_instancia).atributos = atributos_transformados
-   
    comparacao = strcmp(nomes_classes, individuo(indice_instancia).classe)
-   linha_centroide = find(1 == comparacao)
-   vetores_centroides(linha_centroide, :) += atributos_transformados
+   posicao_classe = find(1 == comparacao)   
+   vetores_centroides(posicao_classe, :) += individuo(indice_instancia).atributos
    
   endfor
   
