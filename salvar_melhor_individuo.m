@@ -1,17 +1,9 @@
 function salvar_melhor_individuo(nome_arq, populacao, distribuicao_classes, dados_originais)
   
-  qtd_individuos = size(populacao)(2)
   qtd_instancias = size(populacao(1).repr)(2)
   qtd_atributos = size(populacao(1).repr(1).atributos)(2)
   
-  valores_fitness = zeros(1, qtd_individuos)
-  
-  for indice_individuo = 1:qtd_individuos
-    valores_fitness(indice_individuo) = populacao(indice_individuo).fitness
-  endfor
-  
-  [valor_max, posicao_max] = max(valores_fitness)
-  
+  posicao_max = posicao_melhor_individuo(populacao)
   melhor_individuo_struct = populacao(posicao_max).repr
   melhor_individuo_cell = {}
   
